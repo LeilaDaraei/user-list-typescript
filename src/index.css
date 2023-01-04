@@ -16,7 +16,7 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: rgba(238, 46, 8, 0.418);
+  color: rgba(238, 46, 8, 0.676);
   transition: all 200 ease-in-out;
 }
 footer a:hover {
