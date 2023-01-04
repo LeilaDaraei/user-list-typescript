@@ -7,22 +7,48 @@ const App: React.FC = () => {
     age: string;
     job: string;
   }
-  const [users, setUsers] = useState<{ currentUser: userInt }>({
+  interface allUserInt {
+    currentUser: userInt;
+    allUsers: Array<userInt>;
+  }
+  const [users, setUsers] = useState<allUserInt>({
     currentUser: { name: "", age: "", job: "" },
+    allUsers: [],
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setUsers({
+      ...users,
       currentUser: {
         ...users.currentUser,
         [e.target.name]: e.target.value,
       },
     });
   };
+  const handleSubmit = (e: React.SyntheticEvent): void => {
+    e.preventDefault();
+    setUsers({
+      currentUser: {
+        name: "",
+        age: "",
+        job: "",
+      },
+      allUsers: [...users.allUsers, users.currentUser],
+    });
+  };
+
+  const allUsers = users.allUsers.map((user, index) => (
+    <div key={index}>
+      <h2>{user.name}</h2>
+      <h2>{user.age}</h2>
+      <h2>{user.job}</h2>
+    </div>
+  ));
+
   return (
     <div className="container">
       <h1>React with typescript</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="userName">Name:</label>
         <input
           id="userName"
@@ -50,6 +76,7 @@ const App: React.FC = () => {
         />
         <button type="submit">Add user</button>
       </form>
+      {allUsers}
     </div>
   );
 };
