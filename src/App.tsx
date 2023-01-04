@@ -1,18 +1,14 @@
 import React, { useState } from "react";
+import User, { userInt } from "./Components/User";
 import "./App.css";
 
 const App: React.FC = () => {
-  interface userInt {
-    name: string;
-    age: string;
-    job: string;
-  }
   interface allUserInt {
     currentUser: userInt;
     allUsers: Array<userInt>;
   }
   const [users, setUsers] = useState<allUserInt>({
-    currentUser: { name: "", age: "", job: "" },
+    currentUser: { name: "", age: "", job: "", deleteUser: () => {} },
     allUsers: [],
   });
 
@@ -32,6 +28,7 @@ const App: React.FC = () => {
         name: "",
         age: "",
         job: "",
+        deleteUser: () => {},
       },
       allUsers: [...users.allUsers, users.currentUser],
     });
@@ -47,12 +44,19 @@ const App: React.FC = () => {
   };
 
   const allUsers = users.allUsers.map((user, i) => (
-    <div key={i}>
-      <h2>{user.name}</h2>
-      <h2>{user.age}</h2>
-      <h2>{user.job}</h2>
-      <button onClick={() => deleteHandler(i)}>Delete User</button>
-    </div>
+    // <div key={i}>
+    //   <h2>{user.name}</h2>
+    //   <h2>{user.age}</h2>
+    //   <h2>{user.job}</h2>
+    //   <button onClick={() => deleteHandler(i)}>Delete User</button>
+    // </div>
+    <User
+      key={i}
+      name={user.name}
+      age={user.age}
+      job={user.job}
+      deleteUser={() => deleteHandler(i)}
+    />
   ));
 
   return (
@@ -62,6 +66,7 @@ const App: React.FC = () => {
         <label htmlFor="userName">Name:</label>
         <input
           id="userName"
+          required
           type="text"
           name="name"
           value={users.currentUser.name}
@@ -70,6 +75,7 @@ const App: React.FC = () => {
         <label htmlFor="userAge">Age:</label>
         <input
           id="userAge"
+          required
           type="number"
           name="age"
           value={users.currentUser.age}
@@ -79,6 +85,7 @@ const App: React.FC = () => {
         <label htmlFor="userJob">Job:</label>
         <input
           id="userJob"
+          required
           type="text"
           name="job"
           value={users.currentUser.job}
