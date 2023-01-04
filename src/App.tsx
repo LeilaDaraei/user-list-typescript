@@ -37,11 +37,21 @@ const App: React.FC = () => {
     });
   };
 
+  const deleteHandler = (index: number): void => {
+    const filterUsers = users.allUsers.filter((user, i) => {
+      return index !== i;
+    });
+    users.allUsers.splice(index, 1);
+
+    setUsers({ ...users, allUsers: users.allUsers });
+  };
+
   const allUsers = users.allUsers.map((user, index) => (
     <div key={index}>
       <h2>{user.name}</h2>
       <h2>{user.age}</h2>
       <h2>{user.job}</h2>
+      <button onClick={() => deleteHandler(index)}>Delete User</button>
     </div>
   ));
 
