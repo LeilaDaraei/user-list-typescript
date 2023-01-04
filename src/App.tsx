@@ -35,7 +35,7 @@ const App: React.FC = () => {
   };
 
   const deleteHandler = (index: number): void => {
-    const filterUsers = users.allUsers.filter((user, i) => {
+    users.allUsers.filter((user, i) => {
       return index !== i;
     });
     users.allUsers.splice(index, 1);
@@ -44,12 +44,6 @@ const App: React.FC = () => {
   };
 
   const allUsers = users.allUsers.map((user, i) => (
-    // <div key={i}>
-    //   <h2>{user.name}</h2>
-    //   <h2>{user.age}</h2>
-    //   <h2>{user.job}</h2>
-    //   <button onClick={() => deleteHandler(i)}>Delete User</button>
-    // </div>
     <User
       key={i}
       name={user.name}
@@ -61,8 +55,8 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>React with typescript</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>User Cards</h1>
+      <form onSubmit={handleSubmit} className="card">
         <label htmlFor="userName">Name:</label>
         <input
           id="userName"
