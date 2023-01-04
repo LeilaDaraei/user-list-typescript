@@ -46,12 +46,12 @@ const App: React.FC = () => {
     setUsers({ ...users, allUsers: users.allUsers });
   };
 
-  const allUsers = users.allUsers.map((user, index) => (
-    <div key={index}>
+  const allUsers = users.allUsers.map((user, i) => (
+    <div key={i}>
       <h2>{user.name}</h2>
       <h2>{user.age}</h2>
       <h2>{user.job}</h2>
-      <button onClick={() => deleteHandler(index)}>Delete User</button>
+      <button onClick={() => deleteHandler(i)}>Delete User</button>
     </div>
   ));
 
