@@ -65,6 +65,7 @@ const App: React.FC = () => {
           name="name"
           value={users.currentUser.name}
           onChange={onChangeHandler}
+          autoFocus
         />
         <label htmlFor="userAge">Age:</label>
         <input

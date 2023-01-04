@@ -28,7 +28,6 @@ const User: React.FC<userInt> = ({ name, age, job, deleteUser }) => {
       <button className="deleteBtn" onClick={deleteUser}>
         Delete user
       </button>
-      <hr />
     </div>
   );
 };

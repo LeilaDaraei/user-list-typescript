@@ -1,28 +1,25 @@
 body {
-  background: linear-gradient(-45deg, #b3f9ba, #ebf0a7, #90d9f3, #72f5d6);
+  background: linear-gradient(-45deg, #509156, #f5fac3);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  height: 100vh;
+  height: 100%;
+  border: 0.5vh solid white;
+  max-width: 100vh;
+  padding: 2vh 5vh;
+  margin: 0 auto;
   margin-top: 6vh;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 footer {
   text-align: center;
   display: block;
-  padding: 4vh;
-  font-size: 2.5vh;
+  padding: 4vh 0 2vh;
+  font-size: 2.3vh;
 }
 footer a {
+  text-decoration: none;
   color: rgba(238, 46, 8, 0.418);
+  transition: all 200 ease-in-out;
+}
+footer a:hover {
+  text-decoration: none;
+  color: rgba(210, 46, 13, 0.851);
 }

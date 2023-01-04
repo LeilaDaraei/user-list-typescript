@@ -1,19 +1,17 @@
-
 .container {
-  border: 0.5vh solid white;
   margin: 0 auto;
-  max-width: 100vh;
-  padding: 2vh 5vh;
+
   border-radius: 0.8vh;
 }
 .container h1 {
-  color: rgba(4, 15, 73, 0.729);
+  color: rgba(3, 92, 71, 0.865);
   text-align: center;
 }
 .card {
   margin: 0 auto 10vh;
   border-radius: 0.8vh;
   padding: 3vh 4vh;
+  border: 0.35vh solid white;
   background-color: rgba(215, 251, 249, 0.349);
 }
 .card button {
@@ -22,7 +20,7 @@
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 0.5vh;
-  background: rgba(117, 62, 206, 0.936);
+  background: rgba(12, 172, 126, 0.936);
 }
 .card label {
   font-weight: bold;
@@ -37,4 +35,8 @@
   height: 4.5vh;
   border: 0.3vh solid rgba(152, 150, 152, 0.535);
   background: rgba(237, 232, 246, 0.512);
+}
+.card input:focus {
+  outline: none;
+  border: 0.5vh rgb(148, 176, 162) solid;
 }
