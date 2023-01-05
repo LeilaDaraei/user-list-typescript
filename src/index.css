@@ -5,8 +5,7 @@ body {
   border: 0.5vh solid white;
   max-width: 100vh;
   padding: 2vh 5vh;
-  margin: 0 auto;
-  margin-top: 6vh;
+  margin: 6vh auto;
   border-radius: 1.5vh;
 }
 footer {

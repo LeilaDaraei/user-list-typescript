@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  align-items: baseline;
+}
+.row h2 {
+  margin: 0;
+  margin-right: 0.3vh;
+}
+.row p {
+  margin: 0.3vh;
+}
+.row button {
+  background-color: red;
+}
